@@ -62,5 +62,23 @@
             <td>25</td>
         </tr>
     </table>
+    <hr>
+    <h3>JQuery code</h3>
+    <blockquote cite="https://stackoverflow.com/questions/73249459/randomise-order-of-specific-children-elements-only"> Randomise order of specific children </blockquote >
+    <pre>
+        $.fn.shuffleChildren = function() {
+            $.each(this.get(), function(index, el) {
+                var $el = $(el);
+                var $find = $el.children();
+        
+                $find.sort(function() {
+                    return 0.5 - Math.random();
+                });
+        
+                $el.empty();
+                $find.appendTo($el);
+            });
+        };
+    </pre>  
 </body>
 </html>
